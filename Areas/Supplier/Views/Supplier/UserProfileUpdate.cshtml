@@ -1,0 +1,104 @@
+﻿@model SupplierRegistrationVM
+<partial name="_Notification" />
+
+<style>
+    .form-control[disabled] {
+        background-color: #f0f0f0 !important;
+        color: #495057 !important;
+    }
+</style>
+
+<div class="card shadow border-0 mt-4 mb-5">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Update Profile</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body p-4 mx-3">
+        <form method="post" class="row">
+            <input asp-for="UserName" hidden />
+            <input asp-for="Role" hidden />
+            <input asp-for="Id" hidden />
+            <input asp-for="WareHouseID" hidden />
+            <div class="border p-3 mt-2">
+                <div class="mb-3">
+                    <label asp-for="UserName" class="p-0"></label>
+                    <input asp-for="UserName" class="form-control" disabled/>
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="FullName" class="p-0"></label>
+                    <input asp-for="FullName" class="form-control" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Email" class="p-0"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="PhoneNumber" class="p-0"></label>
+                    <input asp-for="PhoneNumber" type="tel" class="form-control" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Role"></label>
+                    <input asp-for="Role" class="form-control" disabled />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="WareHouseID"></label>
+                    <input asp-for="WareHouseID" class="form-control" disabled />
+                </div>
+                <div class="mb-3 position-relative">
+                    <label asp-for="Password" class="p-0"></label>
+                    <div class="input-group">
+                        <input asp-for="Password" type="password" class="form-control" id="passwordInput" />
+                        <button type="button" class="btn btn-outline-secondary toggle-password" aria-label="Toggle password visibility" data-target="#passwordInput">
+                            <i class="bi bi-eye-slash-fill"></i>
+                        </button>
+                    </div>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="mb-3 position-relative">
+                    <label asp-for="ConfirmPassword" class="p-0"></label>
+                    <div class="input-group">
+                        <input asp-for="ConfirmPassword" type="password" class="form-control" id="confirmPasswordInput" />
+                        <button type="button" class="btn btn-outline-secondary toggle-password" aria-label="Toggle password visibility" data-target="#confirmPasswordInput">
+                            <i class="bi bi-eye-slash-fill"></i>
+                        </button>
+                    </div>
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary mx-2" style="width:150px">Update</button>
+                <a asp-controller="Supplier" asp-action="UserProfile" class="btn btn-secondary mx-2" style="width:150px">
+                    Back
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    <script>
+        $(document).ready(function () {
+            $('.toggle-password').click(function () {
+                var target = $($(this).data('target'));
+                var icon = $(this).find('i');
+
+                if (target.attr('type') === 'password') {
+                    target.attr('type', 'text');
+                    icon.removeClass('bi-eye-slash-fill').addClass('bi-eye-fill');
+                } else {
+                    target.attr('type', 'password');
+                    icon.removeClass('bi-eye-fill').addClass('bi-eye-slash-fill');
+                }
+            });
+        });
+    </script>
+}

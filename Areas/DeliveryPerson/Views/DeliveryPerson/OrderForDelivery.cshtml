@@ -1,0 +1,77 @@
+﻿@model IEnumerable<DeliveryPersonOrderVM>
+
+<partial name="_Notification" />
+
+<div class="card shadow border-0 my-3">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Orders List</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row pb-3">
+            <div class="col-8">
+            </div>
+            <div class="col-4 text-end">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <table id="tblData" class="table table-bordered table-striped custom-table" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th style="width: 6%;">OrderID</th>
+                                <th style="width: 11%;">Customer Name</th>
+                                <th style="width: 18%;">Product Name</th>
+                                <th style="width: 16%;">Company Name</th>
+                                <th style="width: 7%;">Quantity</th>
+                                <th style="width: 9%;">Total Price</th>
+                                <th style="width: 12%;">Shipping Address</th>
+                                <th style="width: 11%;">Order Status</th>
+                                <th style="width: 10%;">Update Status</th>
+                            </tr>
+                        </thead>
+                        @* <tbody>
+                            @foreach (var obj in Model)
+                            {
+                                <tr>
+                                    <td>@obj.Order.OrderID</td>
+                                    <td>@obj.Order.CustomerName</td>
+                                    <td>@obj.Product.ProductName</td>
+                                    <td>@obj.Product.CompanyName</td>
+                                    <td>@obj.Order.Quantity</td>
+                                    <td>₹ @obj.Order.TotalPrice</td>
+                                    <td>@obj.Order.ShippingAddress</td>
+                                    <form class="form-inline" asp-controller="DeliveryPerson" asp-action="OrderStatusUpdate" method="post">
+                                    <td>
+                                        <input type="hidden" value="@obj.Order.OrderID" name="id" />
+                                        <select asp-for="@obj.Order.OrderStatus" name="status" class="form-select">
+                                            <option value="Shipped">Shipped</option>
+                                            <option value="Delivered">Delivered</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <div class="w-100 btn-group" role="group">
+                                            <button type="submit" class="btn btn-primary mx-1 py-1">
+                                                <i class="bi bi-pencil-square"></i>  Update
+                                            </button>
+                                        </div>
+                                    </td>
+                                    </form>
+                                </tr>
+                            }
+                        </tbody> *@
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/DeliveryPerson/OrderForDelivery.js"></script>
+}

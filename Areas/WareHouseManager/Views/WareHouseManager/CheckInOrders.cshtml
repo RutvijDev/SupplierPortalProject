@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WareHouseManagerOrderVM>
+
+<partial name="_Notification" />
+
+<div class="card shadow border-0 my-3">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Checked-IN Orders</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row pb-3">
+            <div class="col-8">
+            </div>
+            <div class="col-4 text-end">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <table id="tblData" class="table table-bordered table-striped custom-table" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th style="width: 9%;">OrderID</th>
+                                <th style="width: 10%;">Order Date</th>
+                                <th style="width: 9%;">SupplierID</th>
+                                <th style="width: 16%;">Product Name</th>
+                                <th style="width: 14%;">Company Name</th>
+                                <th style="width: 9%;">Quantity</th>
+                                <th style="width: 9%;">TotalPrice</th>
+                                <th style="width: 13%;">WareHouse Status</th>
+                                <th style="width: 11%;">Delivery Status</th>
+                            </tr>
+                        </thead>
+@*                         <tbody>
+                            @foreach (var obj in Model)
+                            {
+                                <tr>
+                                    <td>@obj.Order.OrderID</td>
+                                    <td>@obj.Order.OrderDate</td>
+                                    <td>@obj.WareHouseManagerOrder.SupplierID</td>
+                                    <td>@obj.Product.ProductName</td>
+                                    <td>@obj.Product.CompanyName</td>
+                                    <td>@obj.Order.Quantity</td>
+                                    <td>@obj.Order.TotalPrice</td>
+                                    <td>@obj.WareHouseManagerOrder.WareHouse_Order_Status</td>
+                                    <td>@obj.WareHouseManagerOrder.Order_Delivered_Status</td>
+                                </tr>
+                            }
+                        </tbody> *@
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/WareHouse/CheckInOrders.js"></script>
+}
+

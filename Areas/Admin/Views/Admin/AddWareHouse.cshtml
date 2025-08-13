@@ -1,0 +1,43 @@
+﻿@model WareHouseVM
+<partial name="_Notification" />
+
+<div class="card shadow border-0 mt-4 mb-5">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Create New WareHouse</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body p-4 mx-3">
+        <form method="post" class="row">
+            <div class="border p-3 mt-2">
+                <div class="mb-3">
+                    <label asp-for="WareHouseName" class="p-0"></label>
+                    <input asp-for="WareHouseName" class="form-control" />
+                    <span asp-validation-for="WareHouseName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="WareHouseAddress" class="p-0"></label>
+                    <input asp-for="WareHouseAddress" class="form-control" />
+                    <span asp-validation-for="WareHouseAddress" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary mx-2" style="width:150px">Create</button>
+                <a asp-controller="Admin" asp-action="WareHouseList" class="btn btn-secondary mx-2" style="width:150px">
+                    Back To List
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+
+

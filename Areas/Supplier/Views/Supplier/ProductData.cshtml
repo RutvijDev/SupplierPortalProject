@@ -1,0 +1,69 @@
+﻿@model List<Product>
+<partial name="_Notification" />
+
+<div class="card shadow border-0 my-3">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Product List</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row pb-3">
+            <div class="col-8">
+            </div>
+            <div class="col-4 text-end">
+                <a asp-controller="Supplier" asp-action="AddProduct" class="btn btn-primary mt-1 me-3">
+                    <i class="bi bi-plus-circle"></i>  Create New Product
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <table id="tblData" class="table table-bordered table-striped custom-table" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th style="width: 9%;">ProductID</th>
+                                <th style="width: 12%;">Product Name</th>
+                                <th style="width: 12%;">Comapany</th>
+                                <th style="width: 11%;">Category</th>
+                                <th style="width: 10%;">Price</th>
+                                <th style="width: 8%;">Quantity</th>
+                                <th style="width: 14%;">Image</th>
+                                <th style="width: 8%;">Status</th>
+                                <th style="width: 16%;"></th>
+                            </tr>
+                        </thead>
+                        @* <tbody>
+                            @foreach (var obj in Model)
+                            {
+                                <tr>
+                                    <td>@obj.ProductID</td>
+                                    <td>@obj.ProductName</td>
+                                    <td>@obj.CompanyName</td>
+                                    <td>@obj.ProductCategory</td>
+                                    <td>₹ @obj.ProductPrice</td>
+                                    <td>@obj.ProductQuantity</td>
+                                    <td><img src="@obj.ProductImage" height="50%" width="50%"></td>
+                                    <td>@obj.ProductStatus</td>
+                                    <td>
+                                        <div class="w-100 btn-group" role="group">
+                                            <a asp-controller="Supplier" asp-action="Edit" asp-route-id="@obj.ProductID" class="btn btn-primary mx-1 py-1"><i class="bi bi-pencil-square"></i> Edit</a>
+                                            <a asp-controller="Supplier" asp-action="Delete" asp-route-id="@obj.ProductID" class="btn btn-danger mx-1 py-1 px-1"><i class="bi bi-trash3-fill"></i> Delete</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody> *@
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/Supplier/ProductData.js"></script>
+}

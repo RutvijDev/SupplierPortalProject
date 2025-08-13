@@ -1,0 +1,57 @@
+﻿@model SupplierRegistrationVM
+
+<style>
+    .form-control[disabled] {
+        background-color: #f0f0f0 !important;
+        color: #495057 !important;
+    }
+</style>
+
+<div class="card shadow border-0 mt-4 mb-5">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Delete User</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body p-4 mx-3">
+        <form method="post" class="row">
+            <div class="border p-3 mt-2">
+                <div class="mb-3">
+                    <label asp-for="UserName" class="p-0"></label>
+                    <input asp-for="UserName" class="form-control bg-light" disabled />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="FullName" class="p-0"></label>
+                    <input asp-for="FullName" class="form-control" disabled />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Email" class="p-0"></label>
+                    <input asp-for="Email" class="form-control" disabled />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="PhoneNumber" class="p-0"></label>
+                    <input asp-for="PhoneNumber" class="form-control" disabled />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Role"></label>
+                    <input asp-for="Role" class="form-control" disabled />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="WareHouseID"></label>
+                    <select asp-for="WareHouseID" asp-items="ViewBag.WareHouse" class="form-control" disabled></select>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Password" class="p-0"></label>
+                    <input asp-for="Password" type="text" class="form-control" disabled />
+                </div>
+                <button type="submit" class="btn btn-danger mx-2" style="width:150px">Delete</button>
+                <a asp-controller="Admin" asp-action="UserList" class="btn btn-secondary mx-2" style="width:150px">
+                    Back To List
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@model DeliveryPersonVM
+<partial name="_Notification" />
+
+<style>
+    .form-control[disabled] {
+        background-color: #f0f0f0 !important;
+        color: #495057 !important;
+    }
+</style>
+
+<div class="card shadow border-0 mt-4 mb-5">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Find Order</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body p-4 mx-3">
+        <form method="post" class="row">
+            <div class="border p-3 mt-2">
+                <div class="mb-3">
+                    <label asp-for="OrderID" class="p-0"></label>
+                    <input asp-for="OrderID" name="OrderID" class="form-control" />
+                    <span asp-validation-for="OrderID" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary mx-2" style="width:150px">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+
+

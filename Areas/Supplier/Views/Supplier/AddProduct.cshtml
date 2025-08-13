@@ -1,0 +1,76 @@
+﻿@model ProductRegistrationVM
+
+<div class="card shadow border-0 mt-4 mb-5">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Add New Product</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body p-4 mx-3">
+        <form method="post" class="row" enctype="multipart/form-data">
+            <div class="border p-3 mt-2">
+                <div class="mb-3">
+                    <label asp-for="ProductName" class="p-0"></label>
+                    <input asp-for="ProductName" class="form-control" />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="CompanyName" class="p-0"></label>
+                    <input asp-for="CompanyName" class="form-control" />
+                    <span asp-validation-for="CompanyName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ProductCategory" class="p-0"></label>
+                    <input asp-for="ProductCategory" class="form-control" />
+                    <span asp-validation-for="ProductCategory" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ProductDescription" class="p-0"></label>
+                    <input asp-for="ProductDescription" class="form-control" />
+                    <span asp-validation-for="ProductDescription" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ProductPrice" class="p-0"></label>
+                    <input asp-for="ProductPrice" class="form-control" />
+                    <span asp-validation-for="ProductPrice" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ProductQuantity" class="p-0"></label>
+                    <input asp-for="ProductQuantity" class="form-control" />
+                    <span asp-validation-for="ProductQuantity" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ProductImage" class="p-0"></label>
+                    <input type="file" name="file" class="form-control" />
+                    <span asp-validation-for="ProductImage" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ProductStatus"></label>
+                    <select asp-for="ProductStatus" class="form-select">
+                        <option value="">---Select Role---</option> 
+                        <option value="Available">Available</option>
+                        <option value="Not Available">Not Available</option>
+                    </select>
+                    <span asp-validation-for="ProductStatus" text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary mx-2" style="width:150px">Create</button>
+                <a asp-controller="Supplier" asp-action="ProductData" class="btn btn-secondary mx-2" style="width:150px">
+                    Back To List
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+
+
